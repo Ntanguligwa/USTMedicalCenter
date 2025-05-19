@@ -1,0 +1,357 @@
+body {
+  font-family:'Raleway',sanserif;
+background-color:white;
+  color:black;
+padding:0;
+margin:0;
+  overflow-x: hidden;
+  text-align:center;
+  }
+/*Header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 200px;
+  background-color: #00BFB3;
+  position: relative;
+}
+
+#logo-img {
+  height: 30vh;
+  max-width:50vw;
+  margin:auto;
+}
+#nav-menu{
+ margin:0;
+}
+.header-menu:link{
+color:black;
+text-decoration:none;
+  width:10vw;
+  text-align:center;
+  }
+.header-menu{
+color:black;
+text-decoration:none;
+  height:100%;
+  text-align:center;
+  }
+.header-menu:hover{
+background-color:black;
+  color:white;
+}
+.header-menu:focus{
+background-color:black;
+  color:white; 
+}
+
+.header-menu:active{
+color:black; 
+}
+
+/* Nav links */
+.nav-menu {
+  display: flex;
+  gap: 5px;
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  /* Show the hamburger in mobile view */
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #00BFB3;
+  position: relative;
+}
+  
+  .hamburger {
+    display: block;  /* Make it visible */
+    position: absolute;
+    right: 20px;
+    top: 20px; /* Position it near the top-right corner */
+  }
+  .nav-menu {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40%;
+    height: auto;
+    background-color: #00BFB3;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .nav-menu.show {
+    right: 0;
+  }
+  .nav-item {
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+/*Header end*/
+
+
+/*About section*/
+.about-links{
+color:#B00020;
+text-decoration:none;
+  height:100%;
+  text-align:center;
+  }
+.about-links:hover{
+background-color:black;
+  color:white;
+}
+.about-links:focus{
+background-color:black;
+  color:white;
+}
+
+.about-links:active{
+color:#FF1E56; 
+}
+
+.about{
+  text-align:justify;
+  margin:1rem 20vw;
+  line-height: 2;
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  height:100%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+#about-founder{
+  width: 100%;
+  height: 300px; /* or any fixed height you want */
+  object-fit: cover;
+  border-radius: 10px;
+  object-position: top;
+}
+
+#about-manager{
+  width: 100%;
+  height: 300px; /* or any fixed height you want */
+  object-fit: cover;
+  border-radius: 10px;
+}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+.button:active {
+  background-color: #B00020;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+/*About section end*/
+/*Footer section*/
+#footer {
+  background-color: black;
+  padding: 50px 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  text-align: center;
+}
+
+.footer {
+  flex: 1 1 250px; /* Responsive column sizing */
+  min-width: 250px;
+}
+
+.sectionf {
+  margin-top: 20px;
+}
+
+.material-icons {
+  vertical-align: middle;
+  margin-right: 8px;
+  color: black; /* Icons also black */
+}
+
+#address p {
+  margin: 10px 0;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 5px;
+  background: black; /* Social media buttons black */
+  color: white;
+}
+
+
+.footer-links.fa {
+  font-size: 30px;
+  margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-links.fa:hover {
+  transform: scale(1.2); /* Grow effect */
+  box-shadow: 0 0 10px 5px white; /* Glow effect */
+}
+
+.footer-links {
+  color:white;
+text-decoration:none;
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+
+.footer-links:hover{
+background-color:#00BFB3;
+  color:white; 
+ border-radius:20px;
+}
+.footer-links:focus{
+background-color:#00BFB3;
+border:1px solid black; 
+ border-radius:20px;
+}
+
+.footer-links:active{
+color:black; 
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+  overflow: hidden;
+  transition: width 0.4s, background-color 0.3s;
+  width: 60px;
+  height: 60px;
+  animation: pulse 2s infinite; /* 💥 Here’s the pulse animation */
+}
+
+/* WhatsApp icon */
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Text initially hidden */
+.whatsapp-text {
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 16px;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+/* Expand button on hover */
+.whatsapp-button:hover {
+  width: 180px;
+  background-color: #1ebe57;
+}
+
+/* Reveal text on hover */
+.whatsapp-button:hover .whatsapp-text {
+  opacity: 1;
+}
+
+/* ✨ Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+/*Footer section end*/

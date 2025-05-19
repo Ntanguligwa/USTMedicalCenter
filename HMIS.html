@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Google Web Designer 16.3.0.0407">
+  <link rel="stylesheet" href="HMIS.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="../USTClinic/images/USTlogo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>UST Medical Center</title>
+  <style></style>
+</head>
+
+<body class="htmlNoPages">
+  <header class="header">
+    <div id="header">
+      <img src="../USTClinic/images/USTlogo.png" alt="UST clinic" id="logo-img">
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#" class="header-menu">Guidelines and SOPs</a>
+        <a href="https://www.uptodate.com/login" class="header-menu">UptoDate</a>
+        <a href="#" class="header-menu">AI Tools</a>
+      </nav>
+      <div>
+        <a href="#" class="header-menu" id="log">Logout</a>
+      </div>
+    </div>
+    <!-- Hamburger for mobile view -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+  </header>
+  <main>
+    <section class="departments">
+      <h1>Department</h1>
+      <div class="departments-grid">
+        <figure>
+          <img src="../USTClinic/images/admin.png" alt="Administration" class="dptimg">
+          <figcaption>Administration</figcaption>
+        </figure>
+        <figure>
+          <img src="../USTClinic/images/IT.png" alt="IT Department" class="dptimg">
+          <figcaption>IT Department</figcaption>
+        </figure>
+        <figure>
+          <img src="../USTClinic/images/supplychain.png" alt="Supply Chain Department" class="dptimg">
+          <figcaption>Supply Chain Department</figcaption>
+        </figure>
+        <figure>
+          <img src="../USTClinic/images/accounts.png" alt="Accounts Department" class="dptimg">
+          <figcaption>Accounts Department</figcaption>
+        </figure>
+        <figure>
+          <img src="../USTClinic/images/reception.png" alt="Reception" class="dptimg">
+          <figcaption>Reception</figcaption>
+        </figure>
+        <figure>
+          <img src="../USTClinic/images/clinical.png" alt="Clinical Section" class="dptimg">
+          <figcaption>Clinical Section</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="dashboard">
+      <h1>Dashboard</h1>
+      <div class="dashboard-wrapper">
+        <button class="scroll-btn left" onclick="scrollDashboards(-1)">❮</button>
+        <div class="dashboard-scroll" id="dashboardScroll">
+          <div class="dashboard-card">
+            <h2>Supply Chain</h2>
+            <iframe allowfullscreen="" src="https://app.powerbi.com/view?r=YOUR_SUPPLY_CHAIN_REPORT_ID"></iframe>
+          </div>
+          <div class="dashboard-card">
+            <h2>Client Flow</h2>
+            <iframe allowfullscreen="" src="https://app.powerbi.com/view?r=YOUR_CLIENT_FLOW_REPORT_ID"></iframe>
+          </div>
+          <div class="dashboard-card">
+            <h2>Revenues</h2>
+            <iframe allowfullscreen="" src="https://app.powerbi.com/view?r=YOUR_REVENUE_REPORT_ID"></iframe>
+          </div>
+        </div>
+        <button class="scroll-btn right" onclick="scrollDashboards(1)">❯</button>
+      </div>
+    </section>
+    <section id="IT-department">
+      <h1>IT Department</h1>
+      <!-- Staff Section -->
+      <fieldset>
+        <legend>Staff</legend>
+        <input type="search" id="staffsearch" placeholder="Search staff...">
+        <button type="button">Register new user ✚</button>
+      </fieldset>
+      <!-- User Registration Form -->
+      <form method="POST" action="">
+        <fieldset>
+          <legend>Users</legend>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="name" required placeholder="eg. Asha Juma (AJ-StaffID)">
+          <label for="password">Password</label>
+          <input required id="password" type="password" name="password">
+          <label for="role">Role</label>
+          <select name="service" id="service" required>
+            <option value="admin">IT Admin</option>
+            <option value="HCW">HCW</option>
+            <option selected="" value="adminass">Administrative Assistant</option>
+            <option value="management">Management</option>
+            <option value="accounts">Accounts and Finance</option>
+            <option value="HR">HR</option>
+            <option value="lay">Lay Staff</option>
+          </select>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Registered Users Section -->
+      <fieldset>
+        <legend>Registered Users</legend>
+        <input type="search" id="rusearch" placeholder="Search registered users...">
+        <button type="button">Edit Entry</button>
+      </fieldset>
+      <!-- Document Management Section -->
+      <fieldset>
+        <legend>Medical and Other Documents Stored</legend>
+        <input type="search" id="modsearch" placeholder="Search documents...">
+        <button type="button">Download ⬇️</button>
+        <button type="button">Upload ⬆️</button>
+      </fieldset>
+      <!-- Document Upload Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Store Documents</legend>
+          <label for="doctype">Document Type</label>
+          <select name="doctype" id="doctype" required>
+            <option selected="" value="medical">Medical</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="docname">Document Name</label>
+          <input type="text" id="docname" name="docname" required>
+          <label for="docpath">Document Path</label>
+          <input type="text" id="docpath" name="docpath" required>
+          <label for="document1">Document</label>
+          <input type="file" id="document1" name="document1">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="management">
+      <h1>Management</h1>
+      <!-- Documents Stored Section -->
+      <fieldset>
+        <legend>Documents Stored</legend>
+        <input type="search" id="dssearch" placeholder="Search">
+        <button type="button">Download⬇️</button>
+        <button type="button">Upload⬆️</button>
+        <button type="button">Delete</button>
+      </fieldset>
+      <!-- Store Documents Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Store Documents</legend>
+          <label for="doctype">Document Type</label>
+          <select name="doctype" id="doctype" required>
+            <option value="HR">HR</option>
+            <option value="financial">Financial</option>
+            <option selected="" value="medical">Medical</option>
+            <option value="donor">Donor</option>
+            <option value="supervision">Supervision</option>
+            <option value="other">Other</option>
+          </select>
+          <label for="docname">Document Name</label>
+          <input type="text" id="docname" name="docname" required>
+          <label for="docpath">Document Path</label>
+          <input type="text" id="docpath" name="docpath" required>
+          <label for="document2">Document</label>
+          <input type="file" id="document2" name="document2">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Lodged Feedback Section -->
+      <fieldset>
+        <legend>Lodged Feedback</legend>
+        <input type="search" id="lfsearch" placeholder="Search">
+        <button type="button">Update Status</button>
+      </fieldset>
+      <!-- Provider Response Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Provider Response</legend>
+          <label for="status">Follow Up Status</label>
+          <select name="status" id="status" required>
+            <option value="successful">Resolved</option>
+            <option selected="" value="pending">Pending</option>
+            <option value="inprogress">In Progress</option>
+          </select>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="hr-department">
+      <h1>HR Department</h1>
+      <!-- Registered Staff Section -->
+      <fieldset>
+        <legend>Registered Staff</legend>
+        <input type="search" id="rssearch" placeholder="Search">
+        <button type="button">Register New Staff✚</button>
+        <button type="button">Edit Entry</button>
+      </fieldset>
+      <!-- Staff Onboarding Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Staff Onboarding</legend>
+          <label for="firstname">First Name</label>
+          <input type="text" id="firstname" name="firstname" required>
+          <label for="lastname">Last Name</label>
+          <input type="text" id="lastname" name="lastname" required>
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required>
+          <label for="sodob">Date of Birth</label>
+          <input type="date" id="sodob" name="sodob" required>
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            <option value="male">Male</option>
+            <option selected="" value="female">Female</option>
+          </select>
+          <label for="email">Email Address</label>
+          <input placeholder="example@email.com" required id="email" type="email" name="email">
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" placeholder="Start with country code eg. +255" required>
+          <label for="nextofkin">Next of Kin (Full Name)</label>
+          <input type="text" id="nextofkin" name="nextofkin" required>
+          <label for="phonenok">Next of Kin Phone Number</label>
+          <input type="tel" name="phonenok" id="phonenok" placeholder="Start with country code eg. +255" required>
+          <label for="registrationID">Registration ID</label>
+          <select name="registrationID" id="registrationID" required>
+            <option value="voters">Voter's Registration Card</option>
+            <option selected="" value="NIDA">National ID</option>
+            <option value="drivingID">Driving Licence</option>
+            <option value="passport">Passport</option>
+            <option value="birthcert">Birth Certificate</option>
+            <option value="HR">Other</option>
+          </select>
+          <label for="registrationIDn">Registration ID Number</label>
+          <input type="text" name="registrationIDn" id="registrationIDn" placeholder="As it appears in the ID" required>
+          <label for="cadre">Cadre</label>
+          <input type="text" name="cadre" id="cadre" placeholder="As per hiring job description">
+          <label for="education">Highest Level of Education Completed</label>
+          <select name="education" id="education" required>
+            <option value="primary">Primary School</option>
+            <option value="CSEE">Secondary School - CSEE</option>
+            <option value="ACSEE">Secondary School - ACSEE</option>
+            <option value="certificate">Certificate</option>
+            <option selected="" value="odiploma">Ordinary Diploma</option>
+            <option value="pdiploma">Postgraduate Diploma</option>
+            <option value="degree">Degree</option>
+            <option value="masters">Masters</option>
+            <option value="phd">Doctor of Philosophy</option>
+          </select>
+          <label for="professionalbody">Registering Body</label>
+          <input type="text" id="professionalbody" name="professionalbody" required placeholder="Abbreviate, e.g., MCT">
+          <label for="professionalID">Professional Registration ID Number</label>
+          <input type="text" name="professionalID" id="professionalID" placeholder="As it appears in the ID" required>
+          <label for="soled">Licence Expiry Date</label>
+          <input type="date" id="soled" name="soled" required>
+          <label for="soed">Employment Date</label>
+          <input type="date" id="soed" name="soed" required>
+          <label for="sodec">End of Contract Date</label>
+          <input type="date" id="sodec" name="sodec" required>
+          <label for="bankname">Bank Name</label>
+          <input type="text" name="bankname" id="bankname" required>
+          <label for="banknumber">Bank Account Number</label>
+          <input type="text" name="banknumber" id="banknumber" required>
+          <label for="swiftcode">SWIFT Code</label>
+          <input type="text" name="swiftcode" id="swiftcode" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- HR Documents Stored Section -->
+      <fieldset>
+        <legend>HR Documents Stored</legend>
+        <input type="search" id="hdssearch" placeholder="Search">
+        <button type="button">Download⬇️</button>
+        <button type="button">Upload⬆️</button>
+      </fieldset>
+      <!-- Store HR Documents Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Store HR Documents</legend>
+          <label for="hr-doctype">Document Type</label>
+          <select name="doctype" id="hr-doctype" required>
+            <option value="HR">HR</option>
+          </select>
+          <label for="hr-docname">Document Name</label>
+          <input type="text" id="hr-docname" name="docname" required>
+          <label for="hr-docpath">Document Path</label>
+          <input type="text" id="hr-docpath" name="docpath" required>
+          <label for="hr-document">Document</label>
+          <input type="file" id="hr-document" name="hr-document">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="reception-department">
+      <h1>Reception department</h1>
+      <!-- Registered Clients Section -->
+      <fieldset>
+        <legend>Registered clients</legend>
+        <input type="search" id="rdsearch" placeholder="Search clients">
+        <button type="button">Register new user✚</button>
+        <button type="button">Edit entry</button>
+      </fieldset>
+      <!-- Service Form -->
+      <form method="POST" action="your_backend_url_here">
+        <fieldset>
+          <legend>Services</legend>
+          <label for="services">Service</label>
+          <input type="text" id="services" name="services" required>
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" required maxlength="13" size="13">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Insurance Plans Form -->
+      <form method="POST" action="your_backend_url_here">
+        <fieldset>
+          <legend>Insurance plans</legend>
+          <label for="bimaid1">BimaID</label>
+          <select name="bimaid" id="bimaid1" required>
+            <option value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <label for="bimatype">Bima type</label>
+          <select name="bimatype" id="bimatype" required>
+            <option value="pocket">0-Cash</option>
+            <option value="public">1-Public</option>
+            <option value="private">2-Private</option>
+            <option value="vip">3-VIP</option>
+          </select>
+          <label for="bimaname">Bima name</label>
+          <input type="text" id="bimaname" name="bimaname" required placeholder="Put cash if out of pocket">
+          <label for="bimacontacts">Contact details</label>
+          <input type="text" id="bimacontacts" name="bimacontacts" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Registration Form -->
+      <form method="POST" action="your_backend_url_here">
+        <fieldset>
+          <legend>Registration</legend>
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" name="firstname" required>
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" name="lastname" required>
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required>
+          <label for="rdob">Date of birth</label>
+          <input type="date" id="rdob" name="rdob" required>
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            <option selected="" value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <label for="email">Email address</label>
+          <input placeholder="example@email.com" required id="email" type="email" name="email">
+          <label for="phone">Phone number</label>
+          <input type="tel" name="phone" id="phone" placeholder="Start with country code eg. +255" required>
+          <label for="nextofkin">Full name: Next of Kin</label>
+          <input type="text" id="nextofkin" name="nextofkin">
+          <label for="phonenok">Phone number: Next of Kin</label>
+          <input type="tel" name="phonenok" id="phonenok" placeholder="Start with country code eg. +255">
+          <label for="bimaid2">BimaID</label>
+          <select name="bimaid" id="bimaid2" required>
+            <option value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Book Appointments Form -->
+      <form method="POST" action="your_backend_url_here">
+        <fieldset>
+          <legend>Book appointments</legend>
+          <label for="bookingdate">Appointment date booked</label>
+          <input type="date" id="bookingdate" name="bookingdate" required>
+          <label for="appointmentreason">Reason for appointment</label>  <!--  To add services-->
+          <select name="serviceid" id="serviceid" required>
+            <option selected="" value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <label for="serviceid">ServiceID</label>
+          <select name="serviceid" id="serviceid" required>
+            <option selected="" value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Registered Appointments Section -->
+      <fieldset>
+        <legend>Registered appointments</legend>
+        <input type="search" id="rasearch" placeholder="Search appointments">
+        <button type="button">Edit entry</button>
+      </fieldset>
+    </section>
+    <section id="client">
+      <h1>Welcome to our self service section!</h1>
+      <fieldset>
+        <legend>First time attending our facility?</legend>
+        <button type="button">Yes</button>
+        <button type="button">No</button>
+      </fieldset>
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Self Registration</legend>
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" name="firstname" required>
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" name="lastname" required>
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required>
+          <label for="srdob">Date of birth</label>
+          <input type="date" id="srdob" name="srdob" required>
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
+            <option selected="" value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <label for="email">Email address</label>
+          <input placeholder="example@email.com" required id="email" type="email" name="email">
+          <label for="phone">Phone number</label>
+          <input type="tel" name="phone" id="phone" placeholder="Start with country code eg. +255" required>
+          <label for="nextofkin">Full name: Next of Kin</label>
+          <input type="text" id="nextofkin" name="nextofkin">
+          <label for="phonenok">Phone number: Next of Kin</label>
+          <input type="tel" name="phonenok" id="phonenok" placeholder="Start with country code eg. +255">
+          <label for="bimaid">BimaID: 0-Cash, 1-Public, 2-Private, 3-VIP</label>
+          <select name="bimaid" id="bimaid" required>
+            <option value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <button type="submit">Save and next</button>
+        </fieldset>
+      </form>
+      <fieldset>
+        <legend>Search your name and click book appointment</legend>
+        <input type="search" id="synsearch" placeholder="search">
+        <button type="button">Book appointment</button>
+      </fieldset>
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Book appointments</legend>
+          <label for="bookingdate">Appointment date booked</label>
+          <input type="date" id="bookingdate" name="bookingdate" required>
+          <label for="appointmentreason">Reason for appointment</label>
+          <select name="serviceid" id="serviceid" required>
+            <option selected="" value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <label for="serviceid">ServiceID</label>
+          <select name="serviceid" id="serviceid" required>
+            <option selected="" value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+          <button type="submit">Submit and pay in advance</button>
+          <button type="submit">Submit and pay on visit</button>
+        </fieldset>
+      </form>
+      <fieldset>
+        <legend>Search your name to view bill and finalize</legend>
+        <ul style="list-style-type: none;">
+          <li>Mpesa lipa: xxxxxx</li>
+          <li>CRDB bank: xxxxxx</li>
+          <li>NMB bank: xxxxxx</li>
+        </ul>
+        <input type="search" id="lipasearch" placeholder="search">
+        <button type="button">Click here after payment</button>
+      </fieldset>
+      <form method="POST" action="#">
+        <label for="paid">Amount paid</label>
+        <input type="number" id="paid" name="paid" required maxlength="13" size="13">
+        <label for="receipt">Receipt number</label>
+        <input type="text" id="receipt" name="receipt" required>
+        <button type="submit">Submit</button>
+      </form>
+      <form method="POST" action="#" id="clientfeedback">
+        <fieldset>
+          <legend>Client's feedback</legend>
+          <label for="patientid">Patient ID</label>
+          <input type="number" id="patientid" name="patientid" placeholder="Optional">
+          <label for="notes">Feedback or complaints</label>
+          <textarea cols="30" rows="10" id="notes" name="notes" required></textarea>
+          <label for="contacts">Contact details</label>
+          <input type="text" id="contacts" name="contacts" placeholder="optional (phone or email)">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="Clinical-section">
+      <section id="OPD-department">
+        <h1>Out-Patient Department</h1>
+        <fieldset>
+          <legend>Registered appointments</legend>
+          <input type="search" id="rasearch" placeholder="Search">
+          <button type="button">Attend the client</button>
+        </fieldset>
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>OPD Consultation</legend>
+            <label for="complaints">Patient complaints</label>
+            <textarea cols="30" rows="10" id="complaints" name="complaints" required></textarea>
+            <label for="notes">Patient notes</label>
+            <textarea cols="30" rows="10" id="notes" name="notes" required></textarea>
+            <label for="pdx">Provisional diagnosis</label>
+            <textarea cols="30" rows="10" id="pdx" name="pdx" required></textarea>
+            <label for="labs">Laboratory Investigations</label>
+            <textarea cols="30" rows="10" id="labs" name="labs"></textarea>
+            <label for="rads">Radiology Investigations</label>
+            <textarea cols="30" rows="10" id="rads" name="rads"></textarea>
+            <label for="fdx">Final diagnosis</label>
+            <textarea cols="30" rows="10" id="fdx" name="fdx" required></textarea>
+            <label for="ai">AI Generated Evaluation</label>
+            <textarea cols="30" rows="10" class="ai" name="ai"></textarea>
+            <label for="outcomes">Patient Outcomes</label>
+            <select name="outcomes" id="outcomes" required>
+              <option value="discharged">Discharged</option>
+              <option value="admitted">Admitted</option>
+              <option value="referred">Referred</option>
+              <option value="procedure">For procedure</option>
+              <option value="deceased">Deceased</option>
+            </select>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+      <div class="results">
+        <fieldset>
+          <legend>Clients with results returned</legend>
+          <input type="search" id="cwrsearch" placeholder="Search">
+          <button type="button">Attend patient</button>
+        </fieldset>
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>Prescriptions</legend>
+            <label for="itemid">Item ID</label>
+            <input type="number" id="itemid" name="itemid" required>
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount" required>
+            <label for="frequency">Frequency</label>
+            <input type="text" id="frequency" name="frequency" required>
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" name="duration" required>
+            <label for="ai">AI Generated Evaluation</label>
+            <textarea cols="30" rows="10" class="ai" name="ai"></textarea>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <section id="surgery-department">
+      <h1>Surgery Department</h1>
+      <!-- Patients scheduled for procedure -->
+      <fieldset>
+        <legend>Patients Scheduled for Procedure</legend>
+        <input type="search" id="pspsearch" placeholder="Search">
+        <button type="button">Attend client</button>
+      </fieldset>
+      <!-- Pre-OP Clients Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Pre-OP Clients</legend>
+          <label for="serviceid">Service ID</label>
+          <input type="number" id="serviceid" name="serviceid" required>
+          <label for="notes">Pre-OP Notes</label>
+          <textarea cols="30" rows="10" id="notes" name="notes" required></textarea>
+          <label for="pcdsp">Date Scheduled for Procedure</label>
+          <input type="date" id="pcdsp" name="pcdsp" required>
+          <label for="pcdr">Date of Review</label>
+          <input type="datetime-local" id="pcdr" name="pcdr" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Procedure List -->
+      <fieldset>
+        <legend>Procedure List</legend>
+        <input type="search" id="plsearch" placeholder="Search">
+        <button type="button">Attend client</button>
+      </fieldset>
+      <!-- Procedures Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Procedures</legend>
+          <label for="serviceid">Service ID</label>
+          <input type="number" id="serviceid" name="serviceid" required>
+          <label for="notes">Procedure Notes</label>
+          <textarea cols="30" rows="10" id="notes" name="notes" required></textarea>
+          <label for="outcomes">Patient Outcomes</label>
+          <select name="outcomes" id="outcomes" required>
+            <option selected="" value="successful">Operation Successful</option>
+            <option value="postponed">Postponed</option>
+            <option value="deceased">Deceased</option>
+          </select>
+          <label for="ppd">Procedure Date</label>
+          <input type="datetime-local" id="ppd" name="ppd" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="diagnostics-section">
+      <!-- Laboratory Department Section -->
+      <section id="lab-department">
+        <h1>Laboratory Department</h1>
+        <!-- Patients Sent to Lab -->
+        <fieldset>
+          <legend>Patients Sent to the Lab</legend>
+          <input type="search" id="pslsearch" placeholder="Search patients">
+          <button type="button">Attend patient</button>
+        </fieldset>
+        <!-- Laboratory Results Form -->
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>Laboratory Results</legend>
+            <label for="labresults">Laboratory Results</label>
+            <textarea cols="30" rows="10" id="labresults" name="labresults"></textarea>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <!-- Lab Commodity Stock -->
+        <fieldset>
+          <legend>Lab Commodity Stock</legend>
+          <input type="search" id="lcssearch" placeholder="Search lab commodities">
+          <button type="button">Edit Entry</button>
+          <button type="button">Add Entry</button>
+        </fieldset>
+        <!-- Lab Consumables Input Form -->
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>Lab Consumables Input</legend>
+            <label for="itemtype">Item Type</label>
+            <input type="text" id="itemtype" name="itemtype" required>
+            <label for="brand">Brand Name</label>
+            <input type="text" id="brand" name="brand" required>
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" required>
+            <label for="quantity">Quantity Added</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <label for="datereceived">Date Received</label>
+            <input type="date" id="datereceived" name="datereceived" required>
+            <label for="expirydate">Expiry Date</label>
+            <input type="date" id="expirydate" name="expirydate" required>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+        <!-- Lab Consumables Output Form -->
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>Lab Consumables Output</legend>
+            <label for="itemtype">Item Type</label>
+            <input type="text" id="itemtype" name="itemtype" required>
+            <label for="brand">Brand Name</label>
+            <input type="text" id="brand" name="brand" required>
+            <label for="quantity">Quantity Consumed</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <label for="lcord">Reporting Date</label>
+            <input type="datetime-local" id="lcord" name="lcord" required>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+      <!-- Radiology Department Section -->
+      <section id="radiology-department">
+        <h1>Radiology Department</h1>
+        <!-- Patients Sent for Radiology -->
+        <fieldset>
+          <legend>Patients Sent for Radiology</legend>
+          <input type="search" id="psrsearch" placeholder="Search patients">
+          <button type="button">Attend patient</button>
+        </fieldset>
+        <!-- Radiology Results Form -->
+        <form method="POST" action="#">
+          <fieldset>
+            <legend>Radiology</legend>
+            <label for="image">Image Path</label>
+            <input type="url" id="image" name="image" required>
+            <label for="radresults">Radiology Results</label>
+            <textarea cols="30" rows="10" id="radresults" name="radresults"></textarea>
+            <label for="ai">AI Generated Evaluation</label>
+            <textarea cols="30" rows="10" id="ai" name="ai"></textarea>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+    </section>
+    <section id="supplychain-department">
+      <h1>Pharmacy Department</h1>
+      <!-- Prescribed Clients Section -->
+      <fieldset>
+        <legend>Prescribed Clients</legend>
+        <input type="search" id="pdsearch" placeholder="Search clients">
+        <button type="button">Edit Entry</button>
+        <button type="button">Attend Client</button>
+      </fieldset>
+      <!-- Pharmacy Input Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Pharmacy Input</legend>
+          <label for="itemtype">Item Type</label>
+          <input type="text" id="itemtype" name="itemtype" required>
+          <label for="brand">Trade Name</label>
+          <input type="text" id="brand" name="brand" required>
+          <label for="generic">Generic Name</label>
+          <input type="text" id="generic" name="generic" required>
+          <label for="buying_price">Buying Price</label>
+          <input type="number" id="buying_price" name="buying_price" required maxlength="13">
+          <label for="selling_price">Selling Price</label>
+          <input type="number" id="selling_price" name="selling_price" required maxlength="13">
+          <label for="quantity">Quantity Added</label>
+          <input type="number" id="quantity" name="quantity" required maxlength="13">
+          <label for="datereceived">Date Received</label>
+          <input type="date" id="datereceived" name="datereceived" required>
+          <label for="expirydate">Expiry Date</label>
+          <input type="date" id="expirydate" name="expirydate" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Pharmacy Output Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Pharmacy Output</legend>
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" name="amount" required>
+          <label for="frequency">Frequency</label>
+          <input type="text" id="frequency" name="frequency" required>
+          <label for="duration">Duration</label>
+          <input type="text" id="duration" name="duration" required>
+          <label for="dispensed_quantity">Total Quantity Dispensed</label>
+          <input type="number" id="dispensed_quantity" name="dispensed_quantity" required placeholder="e.g., 2x3 for 7 days = 42 tabs">
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Maintenance Plan Section -->
+      <fieldset>
+        <legend>Maintenance Plan</legend>
+        <input type="search" id="mpsearch" placeholder="Search maintenance items">
+        <button type="button">Update Entry</button>
+      </fieldset>
+      <!-- Maintenance Status Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Maintenance Status</legend>
+          <label for="itemtype">Item Type</label>
+          <input type="text" id="itemtype" name="itemtype" required>
+          <label for="brand">Brand Name</label>
+          <input type="text" id="brand" name="brand" required>
+          <label for="mslsd">Last Service Date</label>
+          <input type="date" id="mslsd" name="mslsd" required>
+          <label for="msnsd">Next Service Date</label>
+          <input type="date" id="msnsd" name="msnsd" required>
+          <label for="msrd">Reporting Date</label>
+          <input type="datetime-local" id="msrd" name="msrd" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section id="accounts-department">
+      <h1>Accounts Department</h1>
+      <!-- Clients Sent for Payment Section -->
+      <fieldset>
+        <legend>Clients Sent for Payment</legend>
+        <input type="search" id="cspsearch" placeholder="Search clients">
+        <button type="button">Update Client</button>
+        <button type="button">Edit Entry</button>
+      </fieldset>
+      <!-- Accounts Payment Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Accounts</legend>
+          <label for="paid-accounts">Amount Paid</label>
+          <input type="number" id="paid-accounts" name="paid" required max="999999999" size="13">
+          <label for="receipt">Receipt Number</label>
+          <input type="text" id="receipt" name="receipt" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Accounts Expenses Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Accounts Expenses</legend>
+          <label for="expensecode">Expense Code</label>
+          <select id="expensecode" name="expensecode" required>
+            <option value="001-HRH" selected="">001-HRH</option>
+            <option value="002-Electricity Bill">002-Electricity Bill</option>
+            <option value="003-Water Bill">003-Water Bill</option>
+            <option value="004-Taxes">004-Taxes</option>
+            <option value="005-Medical Supplies">005-Medical Supplies</option>
+            <option value="006-Rent">006-Rent</option>
+            <option value="007-Other Incidentals">007-Other Incidentals</option>
+          </select>
+          <label for="itemname">Expense Name</label>
+          <input type="text" id="itemname" name="itemname" required>
+          <label for="paid-expenses">Amount Paid</label>
+          <input type="number" id="paid-expenses" name="paid" required max="999999999" size="13">
+          <label for="invoice">Invoice Number</label>
+          <input type="text" id="invoice" name="invoice">
+          <label for="aed">Date</label>
+          <input type="datetime-local" id="aed" name="aed" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Expense Categories Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Expense Categories</legend>
+          <label for="expensecode-category">Expense Code</label>
+          <select id="expensecode-category" name="expensecode" required>
+            <option value="001-HRH" selected="">001-HRH</option>
+            <option value="002-Electricity Bill">002-Electricity Bill</option>
+            <option value="003-Water Bill">003-Water Bill</option>
+            <option value="004-Taxes">004-Taxes</option>
+            <option value="005-Medical Supplies">005-Medical Supplies</option>
+            <option value="006-Rent">006-Rent</option>
+            <option value="007-Other Incidentals">007-Other Incidentals</option>
+          </select>
+          <label for="expensename">Expense Name</label>
+          <input type="text" id="expensename" name="expense" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+      <!-- Accounts Documents Section -->
+      <fieldset>
+        <legend>Accounts Documents Stored</legend>
+        <input type="search" id="adssearch" placeholder="Search documents">
+        <button type="button">Download ⬇️</button>
+        <button type="button">Upload ⬆️</button>
+      </fieldset>
+      <!-- Store Financial Documents Form -->
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Store Financial Documents</legend>
+          <label for="doctype">Document Type</label>
+          <select name="doctype" id="doctype" required>
+            <option value="financial">Financial</option>
+          </select>
+          <label for="docname">Document Name</label>
+          <input type="text" id="docname" name="docname" required>
+          <label for="docpath">Document Path</label>
+          <input type="text" id="docpath" name="docpath" required>
+          <label for="document3">Document</label>
+          <input type="file" id="document3" name="document3" required>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+  <!-- Footer Section -->
+  <footer id="footer">
+    <p id="copyright" style="color: #555; text-align: center; margin-top: 50px;">
+      <strong>Ntanguligwas | ©UST Medical Center 2025</strong>
+    </p>
+  </footer>
+</body>
+
+</html>

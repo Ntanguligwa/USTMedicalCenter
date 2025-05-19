@@ -1,0 +1,607 @@
+body {
+  font-family:'poppins',sanserif;
+background-color:white;
+  color:rgba(158,71,51,1);
+padding:0;
+margin:0;
+  overflow-x: hidden;
+  }
+
+
+h1{
+  font-size:1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #1b9b86;
+  position: relative;
+}
+
+#logo-img {
+  height: 30vh;
+  max-width:50vw;
+}
+#team {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.team-text {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.team-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.team-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive for small devices */
+@media (max-width: 768px) {
+  .team-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .team-img {
+    width: 90%;
+  }
+}
+
+
+/* Nav links */
+.nav-menu {
+  display: flex;
+  gap: 5px;
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    padding:0;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+.header-menu:link{
+color:white;
+text-decoration:none;
+border:2px solid black;
+ border-radius:20px;
+  width:10vw;
+  text-align:center;
+  }
+.header-menu:hover{
+background-color:rgba(158,71,51,1); 
+}
+.header-menu:focus{
+background-color:rgba(158,71,51,1); 
+}
+.header-menu:visited{
+color:yellow;
+border:2px solid #1b9b86;
+}
+.header-menu:active{
+color:black; 
+}
+
+section {
+   text-align:center;
+}
+.act-img{
+height:90vh;
+max-width:100vw;
+margin:0;
+vertical-align: middle;
+}
+.projects-img{
+  margin:0;
+  height:75vh;
+  width:100%;
+  padding:0;
+  transition: transform 0.5s ease;
+  display:block;
+ }
+.voices img {
+  width: 100%;
+  height: 60vh; /* Still control the height */
+  object-fit: cover; /* 👈 THIS makes it auto-crop beautifully */
+  border-radius: 10px; /* Optional: soft edges */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: subtle depth */
+}
+
+.partner-img {
+  height: 150px;
+  width: auto;
+  transition: transform 0.4s ease;
+}
+
+.partner-img:hover {
+  transform: scale(1.1);
+}
+
+.donor {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+ .projects-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* Adds nice spacing between cards */
+  padding: 16px;
+}
+
+.project-card {
+  flex: 1 1 300px; /* Grow and shrink as needed, min 300px wide */
+  max-width: 30%;
+  text-decoration: none;
+}
+
+.projects-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px; /* optional rounded corners */
+}
+
+.projects-img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.projects-container:hover .projects-img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start fully off-screen */
+  width: 100%;
+  height: 100%;
+  background-color: #008CBA;
+  transform: skewX(-20deg); /* Tilt for diagonal effect */
+  transition: all 0.7s ease;
+  opacity: 0.8;
+}
+
+.projects-container:hover .overlay {
+  left: 0; /* Slide the overlay into place */
+}
+
+.projects-text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0; /* Start hidden */
+  transition: all 0.5s ease;
+}
+
+.projects-container:hover .projects-text {
+  top: 40%; /* Move text slightly up */
+  opacity: 1; /* Fade in text */
+}
+
+.projects-p {
+  text-align: center;
+  margin-top: 0;
+  font-size: 18px;
+  color: black;
+  animation: blink 1s infinite;
+}
+.project-card {
+  flex: 1 1 300px;
+  max-width: 30%;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 smooth hover effects */
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* 👈 lift the card slightly */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 👈 soft shadow */
+}
+.voices {
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .project-card {
+    max-width: 100%;
+  }
+}
+
+
+
+
+/* Slideshow container1 */
+.slideshow-container {
+  max-width: 100vw;
+  position: relative;
+  margin:0;
+  padding:0 0 10px 0;
+}
+* {box-sizing:border-box;}
+.mySlides {
+  display: none;
+}
+
+.slideshow-container{
+  position: relative;
+  text-align: center;
+}
+
+/* Caption text */
+.act-caption {
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  width: auto;
+  text-align: center;
+  background-color:rgba(0,0,0,0.4);
+  border-radius:10px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: white;
+  background-color:black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  top:90vh;
+  left:0;
+  }
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active{
+  background-color: black;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-gallery-container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.voices {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev{
+ left:0;
+  margin-top: -50px;
+  font-weight: bold;
+ border-radius: 3px 0 0 3px;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  user-select: none;
+  transition: 0.3s;
+  transform: translateY(-50%);
+}
+.next {
+  right:0;
+  margin-top: -50px;
+  font-weight: bold;
+ border-radius: 3px 0 0 3px;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  user-select: none;
+  transition: 0.3s;
+  transform: translateY(-50%);
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: #008CBA;
+}
+
+/* Container for image text */
+.voices-cap-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 3 columns side by side */
+.column {
+  float: left;
+  width: 33.3%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  border-radius: 5px;
+  margin: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+
+.active,
+.demo:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+
+
+.about{
+  text-align:justify;
+  margin:1rem 20vw;
+  line-height: 2;
+}
+
+
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
+#footer {
+  background-color: #1b9b86; /* Your nice green background */
+  padding: 50px 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  text-align: center;
+}
+
+.footer {
+  flex: 1 1 250px; /* Responsive column sizing */
+  min-width: 250px;
+}
+
+.sectionf {
+  margin-top: 20px;
+}
+
+.material-icons {
+  vertical-align: middle;
+  margin-right: 8px;
+  color: black; /* Icons also black */
+}
+
+#address p {
+  margin: 10px 0;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 5px;
+  background: black; /* Social media buttons black */
+  color: white;
+}
+
+
+.footer-links.fa {
+  font-size: 30px;
+  margin: 10px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-links.fa:hover {
+  transform: scale(1.2); /* Grow effect */
+  box-shadow: 0 0 10px 5px white; /* Glow effect */
+}
+
+.footer-links {
+  color:white;
+text-decoration:none;
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+
+.footer-links:hover{
+background-color:rgba(158,71,51,1);
+border:1px solid black; 
+ border-radius:20px;
+}
+.footer-links:focus{
+background-color:rgba(158,71,51,1);
+border:1px solid black; 
+ border-radius:20px;
+}
+.footer-links:visited{
+color:purple;
+}
+.footer-links:active{
+color:black; 
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+  overflow: hidden;
+  transition: width 0.4s, background-color 0.3s;
+  width: 60px;
+  height: 60px;
+  animation: pulse 2s infinite; /* 💥 Here’s the pulse animation */
+}
+
+/* WhatsApp icon */
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Text initially hidden */
+.whatsapp-text {
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 16px;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+/* Expand button on hover */
+.whatsapp-button:hover {
+  width: 180px;
+  background-color: #1ebe57;
+}
+
+/* Reveal text on hover */
+.whatsapp-button:hover .whatsapp-text {
+  opacity: 1;
+}
+
+/* ✨ Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}

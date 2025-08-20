@@ -4,22 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UST Medical Center - Transforming health through innovative evidence-based practice in Dar es Salaam, Tanzania">
   <meta name="generator" content="Google Web Designer 16.3.0.0407">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="USTlogo.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>UST Medical Center</title>
+  <title>UST Medical Center - Quality Healthcare in Tanzania</title>
   <style></style>
 </head>
 
 <body class="htmlNoPages">
   <header class="header">
-    <a href="index.html">
-      <img src="USTlogo.png" alt="UST clinic" id="logo-img">
+    <a href="index.html" aria-label="UST Medical Center Home">
+      <img src="USTlogo.png" alt="UST Medical Center Logo" id="logo-img">
     </a>
-    <nav class="nav-menu" id="nav-menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-icon">☰</span>
+    </button>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
       <a href="#who-we-are" class="header-menu">About us</a>
       <a href="clinichomepage.html" class="header-menu">Our Clinic</a>
       <a href="Coming-soon.html" class="header-menu">Research and Development Center</a>
@@ -27,97 +31,100 @@
       <a href="Coming-soon.html" class="header-menu">Tenders and Jobs</a>
       <a href="#footer" class="header-menu">Contact us</a>
     </nav>
-    <!-- Hamburger for mobile view -->
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
   </header>
-  <div class="slideshow-container">
+  
+  <div class="slideshow-container" aria-label="Image carousel">
     <div class="mySlides fade">
-      <img src="Stetho1.jpg" alt="Sthethoscope" class="act-img" style="width: 100%;">
+      <img src="Stetho1.jpg" alt="Medical stethoscope representing quality healthcare" class="act-img" style="width: 100%;">
     </div>
     <div class="mySlides fade">
-      <img src="Innovation.jpg" alt="Innovation" class="act-img" style="width: 100%;">
+      <img src="Innovation.jpg" alt="Medical innovation and technology" class="act-img" style="width: 100%;">
     </div>
     <div class="mySlides fade">
-      <img src="LovingDoctor.jpg" alt="Doctor showing love" class="act-img" style="width: 100%;">
-    </div><br>
-    <div style="text-align: center;">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <img src="LovingDoctor.jpg" alt="Caring doctor with patient" class="act-img" style="width: 100%;">
+    </div>
+    <div class="slideshow-controls" style="text-align: center;">
+      <span class="dot" onclick="currentSlide(1)" aria-label="Show slide 1"></span>
+      <span class="dot" onclick="currentSlide(2)" aria-label="Show slide 2"></span>
+      <span class="dot" onclick="currentSlide(3)" aria-label="Show slide 3"></span>
     </div>
   </div>
-  <section id="who-we-are">
-    <div id="about">
-      <h1>❓|About us:</h1>
-      <p class="about">As part of the Updating society of Tanzania Enterprises Group, we are a <strong style="color: black;">Youth led</strong> registered medical clinic that seeks to transform health and well-being of people through innovative evidence based practice. We are based in Dar es salaam, Tanzania. </p>
-      <p class="about">As medical professionals, our core objective is to promote modern quality patient centered care. Through data science, informatics and research we seek to treat people with numbers and evidence. While, as public health specialists we also seek to treat people with community led impactful interventions. On the long run promoting health equity and self-advocacy.</p><em>
-        <a href="About.html" id="aboutread">Read more...</a></em>
-    </div>
-  </section>
-  <section id="what-we-do">
-    <h1 class="heading">ENJOY OUR SERVICES</h1>
-    <p class="projects-p"><em>Click on the image to access....</em></p>
-    <div class="projects-row">
-      <a href="clinichomepage.html" class="project-card">
-        <div class="projects-container">
-          <img src="Preg.jpg" alt="Woman on Antenatal Clinic" class="projects-img">
-          <div class="overlay">
-            <div class="projects-text">Our clinic</div>
+  
+  <main>
+    <section id="who-we-are" aria-labelledby="about-heading">
+      <div id="about">
+        <h1 id="about-heading">❓|About us:</h1>
+        <p class="about">As part of the Updating society of Tanzania Enterprises Group, we are a <strong>Youth led</strong> registered medical clinic that seeks to transform health and well-being of people through innovative evidence based practice. We are based in Dar es salaam, Tanzania. </p>
+        <p class="about">As medical professionals, our core objective is to promote modern quality patient centered care. Through data science, informatics and research we seek to treat people with numbers and evidence. While, as public health specialists we also seek to treat people with community led impactful interventions. On the long run promoting health equity and self-advocacy.</p>
+        <em><a href="About.html" id="aboutread">Read more...</a></em>
+      </div>
+    </section>
+    
+    <section id="what-we-do" aria-labelledby="services-heading">
+      <h1 class="heading" id="services-heading">ENJOY OUR SERVICES</h1>
+      <p class="projects-p"><em>Click on the image to access....</em></p>
+      <div class="projects-row">
+        <a href="clinichomepage.html" class="project-card" aria-label="Visit our clinic services">
+          <div class="projects-container">
+            <img src="Preg.jpg" alt="Woman receiving antenatal care" class="projects-img">
+            <div class="overlay">
+              <div class="projects-text">Our clinic</div>
+            </div>
           </div>
-        </div>
-      </a>
-      <a href="Coming-soon.html" class="project-card">
-        <div class="projects-container">
-          <img src="Research.jpg" alt="Book picture on medical research" class="projects-img">
-          <div class="overlay">
-            <div class="projects-text">Research and Development Center</div>
+        </a>
+        <a href="Coming-soon.html" class="project-card" aria-label="Visit our research and development center">
+          <div class="projects-container">
+            <img src="Research.jpg" alt="Medical research books and resources" class="projects-img">
+            <div class="overlay">
+              <div class="projects-text">Research and Development Center</div>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-    <div class="projects-row">
-      <a href="Coming-soon.html" class="project-card">
-        <div class="projects-container">
-          <img src="Data.jpg" alt="Data science" class="projects-img">
-          <div class="overlay">
-            <div class="projects-text">Data Science and Innovation Hub</div>
+        </a>
+      </div>
+      <div class="projects-row">
+        <a href="Coming-soon.html" class="project-card" aria-label="Visit our data science and innovation hub">
+          <div class="projects-container">
+            <img src="Data.jpg" alt="Data science and healthcare analytics" class="projects-img">
+            <div class="overlay">
+              <div class="projects-text">Data Science and Innovation Hub</div>
+            </div>
           </div>
-        </div>
-      </a>
-      <a href="Coming-soon.html" class="project-card">
-        <div class="projects-container">
-          <img src="HealthEducation.jpg" alt="Community outreach" class="projects-img">
-          <div class="overlay">
-            <div class="projects-text">Health Promotion</div>
+        </a>
+        <a href="Coming-soon.html" class="project-card" aria-label="Learn about our health promotion services">
+          <div class="projects-container">
+            <img src="HealthEducation.jpg" alt="Community health education and outreach" class="projects-img">
+            <div class="overlay">
+              <div class="projects-text">Health Promotion</div>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-  </section>
-  <section id="partner">
-    <h1 class="heading">Our Partners</h1>
-    <div class="scroll-container">
-      <figure class="donor">
-        <a href="https://www.moh.go.tz/">
-          <img src="MoH.png" alt="Ministry of Health Tanzania" class="partner-img">
         </a>
-        <a href="https://www.afro.who.int/">
-          <img src="WHO.png" alt="World Health Organization" class="partner-img">
-        </a>
-        <a href="https://doctorswithafrica.org/">
-          <img src="NEW_cuamm_ENG_RGB.png" alt="Doctors with Africa-CUAMM" class="partner-img">
-        </a>
-        <a href="https://hkh-website.netlify.app/">
-          <img src="HKH_Logo_Main.svg" alt="Hatua kwa Hatua Foundation" class="partner-img">
-        </a>
-      </figure>
-    </div>
-  </section>
+      </div>
+    </section>
+    
+    <section id="partner" aria-labelledby="partners-heading">
+      <h1 class="heading" id="partners-heading">Our Partners</h1>
+      <div class="scroll-container">
+        <figure class="donor">
+          <a href="https://www.moh.go.tz/" aria-label="Ministry of Health Tanzania">
+            <img src="MoH.png" alt="Ministry of Health Tanzania" class="partner-img">
+          </a>
+          <a href="https://www.afro.who.int/" aria-label="World Health Organization">
+            <img src="WHO.png" alt="World Health Organization" class="partner-img">
+          </a>
+          <a href="https://doctorswithafrica.org/" aria-label="Doctors with Africa CUAMM">
+            <img src="NEW_cuamm_ENG_RGB.png" alt="Doctors with Africa-CUAMM" class="partner-img">
+          </a>
+          <a href="https://hkh-website.netlify.app/" aria-label="Hatua kwa Hatua Foundation">
+            <img src="HKH_Logo_Main.svg" alt="Hatua kwa Hatua Foundation" class="partner-img">
+          </a>
+        </figure>
+      </div>
+    </section>
+  </main>
+  
   <footer id="footer">
     <section class="footer">
-      <h1 style="color: #B00020;">Who we are</h1>
+      <h2 style="color: #B00020;">Who we are</h2>
       <div class="sectionf">
         <a href="About.html" class="footer-links">Vision</a><br>
         <a href="About.html" class="footer-links">Mission</a><br>
@@ -128,30 +135,33 @@
       <i class="material-icons" style="font-size: 30px; color: #B00020;">pin_drop</i>
       <div class="sectionf">
         <address id="address">
-                <p><a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" id="pin" class="footer-links">Family Road,<br> Mapangashaa Street, Salasala.<br>
-                Dar es salaam, Tanzania</a></p>
-                <p><i class="material-icons" style="font-size: 20px; color: #B00020;">call</i><a href="tel:+255785071020" class="footer-links"> +255785071020</a></p>
-                <p><i class="material-icons" style="font-size: 20px; color: #B00020;">email</i><a href="mailto:updatingsocietytanzania@gmail.com" class="footer-links"> updatingsocietytanzania@gmail.com</a></p>
-            </address>
+          <p><a href="https://maps.app.goo.gl/3Aehq8iZjTsLg93B6" id="pin" class="footer-links">Family Road,<br> Mapangashaa Street, Salasala.<br>
+          Dar es salaam, Tanzania</a></p>
+          <p><i class="material-icons" style="font-size: 20px; color: #B00020;">call</i><a href="tel:+255785071020" class="footer-links"> +255785071020</a></p>
+          <p><i class="material-icons" style="font-size: 20px; color: #B00020;">email</i><a href="mailto:updatingsocietytanzania@gmail.com" class="footer-links"> updatingsocietytanzania@gmail.com</a></p>
+        </address>
       </div>
     </section>
     <section class="footer">
-      <h1 style="color: #B00020;">Contact us</h1>
+      <h2 style="color: #B00020;">Contact us</h2>
       <div class="sectionf">
-        <a href="https://www.instagram.com/updatingsocietytz/" class="fa fa-instagram footer-links"></a><br>
-        <a href="https://x.com/TheUST_official?t=73aVPuWYK4TcVBaB_EjXjw&amp;s=09" class="fa fa-twitter footer-links"></a><br>
-        <a href="#" class="fa fa-linkedin footer-links"></a><br>
-        <a href="https://www.youtube.com/@updatingsocietyoftanzania" class="fa fa-youtube footer-links"></a>
+        <a href="https://www.instagram.com/updatingsocietytz/" class="fa fa-instagram footer-links" aria-label="Follow us on Instagram"></a><br>
+        <a href="https://x.com/TheUST_official?t=73aVPuWYK4TcVBaB_EjXjw&amp;s=09" class="fa fa-twitter footer-links" aria-label="Follow us on Twitter"></a><br>
+        <a href="#" class="fa fa-linkedin footer-links" aria-label="Connect with us on LinkedIn"></a><br>
+        <a href="https://www.youtube.com/@updatingsocietyoftanzania" class="fa fa-youtube footer-links" aria-label="Subscribe to our YouTube channel"></a>
       </div>
     </section>
   </footer>
+  
   <p id="copyright" style="color: black; text-align: center;">©UST Medical Center 2025</p>
-  <script src="index.js"></script>
+  
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank">
+  <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
     <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
     <span class="whatsapp-text">Chat with us!</span>
   </a>
+  
+  <script src="index.js"></script>
 </body>
 
 </html>

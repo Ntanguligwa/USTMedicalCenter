@@ -1,5 +1,5 @@
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function () {
-  // Mobile menu functionality
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
   
@@ -121,5 +121,44 @@ document.addEventListener('DOMContentLoaded', function () {
     lazyImages.forEach(img => {
       imageObserver.observe(img);
     });
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (navMenu) {
+          navMenu.classList.remove('show');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
+
+  // Simple animation for hero section
+  const heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    const colors = ['#00BFB3', '#1a8a82', '#008080'];
+    let currentColorIndex = 0;
+
+    function changeHeroBackground() {
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+      heroSection.style.background = `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), ${colors[currentColorIndex]}`;
+    }
+
+    // Change background every 8 seconds
+    setInterval(changeHeroBackground, 8000);
   }
 });

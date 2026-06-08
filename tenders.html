@@ -3,157 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Co-Founder Opportunity - UST HealthTech Innovation</title>
+    <title>UST Careers & Partnerships | Lab Technologist & Co-Founder Opportunities</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-      <link rel="icon" href="USTlogo.png" type="image/x-icon">
+    <link rel="icon" href="USTlogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="tenders.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #f4f7fc;
+            color: #1a2b3e;
+            line-height: 1.5;
+        }
+        /* Header */
+        .tender-header {
+            background: linear-gradient(135deg, #B00020, #8b0018);
+            color: white;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-area a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        #logo-img {
+            height: 55px;
+            width: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 5px;
+        }
+        .post-date {
+            background: rgba(255,255,255,0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        /* two-column layout for both opportunities */
+        .dual-opportunities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .opportunity-card {
+            flex: 1;
+            min-width: 320px;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            padding: 1.5rem 2rem;
+            background: #fff;
+            border-bottom: 4px solid #00BFB3;
+        }
+        .card-header.lab-header {
+            border-bottom-color: #B00020;
+        }
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .card-header h2 i {
+            font-size: 2rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #eef2f5;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1e4663;
+        }
+        .badge-closed {
+            background: #e0e0e0;
+            color: #666;
+        }
+        .deadline-badge {
+            font-weight: 700;
+            background: #fff0e0;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .card-body {
+            padding: 1.8rem 2rem;
+        }
+        .section-mini {
+            margin-bottom: 1.8rem;
+        }
+        .section-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #B00020;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 4px solid #00BFB3;
+            padding-left: 12px;
+        }
+        .section-mini.lab-h3 h3 {
+            color: #B00020;
+            border-left-color: #B00020;
+        }
+        .highlight-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .highlight-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .highlight-list li i {
+            width: 24px;
+            color: #00BFB3;
+        }
+        .email-container {
+            background: #f0f9fa;
+            border-radius: 60px;
+            padding: 0.8rem 1.2rem;
+            margin: 1.2rem 0;
+            display: inline-block;
+            width: auto;
+        }
+        .email-link {
+            text-decoration: none;
+            font-weight: bold;
+            color: #B00020;
+            font-size: 1rem;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-primary {
+            background: #B00020;
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #8b0018;
+            transform: scale(1.02);
+        }
+        .btn-secondary {
+            background: #2c3e50;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #1e2f3c;
+        }
+        /* Improved Footer */
+        .tender-footer {
+            background: #0a1c28;
+            color: #cbd5e1;
+            padding: 2.5rem 1rem 2rem;
+            margin-top: 3rem;
+        }
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+        .footer-logo i {
+            font-size: 1.8rem;
+            color: #B00020;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .footer-links a:hover {
+            color: #00BFB3;
+        }
+        .footer-contact {
+            text-align: right;
+        }
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+        .footer-contact a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        .footer-contact a:hover {
+            color: #00BFB3;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #8ba0ae;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            border-radius: 50px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: transform 0.2s;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+        .whatsapp-button img {
+            width: 28px;
+            filter: brightness(0) invert(1);
+        }
+        @media (max-width: 860px) {
+            .card-header h2 { font-size: 1.4rem; }
+            .card-body { padding: 1.2rem; }
+            .footer-contact { text-align: left; }
+            .footer-contact p { justify-content: flex-start; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section - Matching Home Page -->
+    <!-- Header Section -->
     <header class="tender-header">
-                 <div class="header-content">
-                <div class="logo-area">
-                    <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-                    <img src="USTlogo.png" alt="UST clinic" id="logo-img">                     
-                    </a>
-                </div>
-                <div class="post-date">
-                    <i class="far fa-calendar-alt"></i> Posted: January 2026
-                </div>
+        <div class="header-content">
+            <div class="logo-area">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                    <img src="USTlogo.png" alt="UST clinic" id="logo-img">     
+                    <span style="font-weight:600; font-size:1.2rem;">UST Medical Center</span>                
+                </a>
             </div>
-          </header>
+            <div class="post-date">
+                <i class="far fa-calendar-alt"></i> Job/Tender Openings
+            </div>
+        </div>
+    </header>
     
     <div class="container">
-        <!-- Main Content -->
-        <div class="tender-content">
-            <!-- Tender Details -->
-            <main class="tender-details">
-                <h1 class="tender-title"><i class="fas fa-rocket" style="color: #B00020;"></i> Call for Co-Founder / Technical Partner – HealthTech Innovation in Tanzania</h1>
-                <p class="tender-subtitle">I am a medical doctor and public health informatician, currently working with Africa CDC, with a strong vision to build a technology-driven healthcare company that addresses real health system challenges in Tanzania and Africa.</p>
-                
-                <div class="tender-section">
-                    <h2 class="section-title"><i class="fas fa-globe-africa" style="color: #00BFB3;"></i> The Vision</h2>
-                    <div class="section-content">
-                        <p>To design and scale context-aware, impactful health technologies that apply:</p>
-                        <ul class="highlight-list">
-                            <li><i class="fas fa-brain" style="color: #00BFB3;"></i> Artificial Intelligence (AI)</li>
-                            <li><i class="fas fa-chart-line" style="color: #00BFB3;"></i> Data Science & Machine Learning</li>
-                            <li><i class="fas fa-robot" style="color: #00BFB3;"></i> Robotics / automation (where relevant)</li>
-                            <li><i class="fas fa-laptop-medical" style="color: #00BFB3;"></i> Digital health systems & analytics</li>
-                        </ul>
-                        <p>The focus will be on solving real clinical and public health problems in low- and middle-income settings not building tech for its own sake.</p>
-                    </div>
+        <!-- dual opportunities: Lab Technologist + Co-Founder -->
+        <div class="dual-opportunities">
+            
+            <!-- 1. Part Time Medical Laboratory Technologist (Active) -->
+            <div class="opportunity-card">
+                <div class="card-header lab-header">
+                    <h2><i class="fas fa-microscope" style="color:#B00020;"></i> Part-time Medical Lab Technologist</h2>
+                    <div class="badge"><i class="far fa-clock"></i> Sundays only | Dar es Salaam, Salasala</div>                    
+                    <div class="deadline-badge"><i class="far fa-hourglass-half"></i> Deadline: Rolling (Open)</div>
                 </div>
-                
-                <div class="tender-section">
-                    <h2 class="section-title"><i class="fas fa-search" style="color: #00BFB3;"></i> Who I'm Looking For</h2>
-                    <div class="section-content">
-                        <p>A technical co-founder / partner with background or strong interest in one or more of the following:</p>
-                        <ul class="highlight-list">
-                            <li><i class="fas fa-database" style="color: #00BFB3;"></i> Data Science / Machine Learning / AI</li>
-                            <li><i class="fas fa-code" style="color: #00BFB3;"></i> Software engineering (backend, cloud, data pipelines)</li>
-                            <li><i class="fas fa-cogs" style="color: #00BFB3;"></i> Robotics / automation (healthcare or lab systems is a plus)</li>
-                            <li><i class="fas fa-stethoscope" style="color: #00BFB3;"></i> Health informatics or applied AI in health</li>
-                        </ul>
-                        <p>You don't need to know everything but you should be:</p>
-                        <ul class="highlight-list">
-                            <li><i class="fas fa-lightbulb" style="color: #00BFB3;"></i> Curious and driven</li>
-                            <li><i class="fas fa-tools" style="color: #00BFB3;"></i> Comfortable building from scratch</li>
-                            <li><i class="fas fa-graduation-cap" style="color: #00BFB3;"></i> Willing to learn healthcare realities</li>
-                            <li><i class="fas fa-heart" style="color: #B00020;"></i> Motivated by impact, not just titles</li>
-                            <li><i class="fas fa-handshake" style="color: #00BFB3;"></i> Open to long-term partnership and shared ownership</li>
-                        </ul>
-                        <p>Early-career scientists, graduate students, or self-taught innovators are welcome.</p>
+                <div class="card-body">
+                    <div class="section-mini lab-h3">
+                        <h3><i class="fas fa-bullhorn"></i> Position Summary</h3>
+                        <p>The Part Time Laboratory Technologist will be responsible for Sunday routine operations of the medical lab and monitor the supply chain of essential commodities. Oversee Infection Prevention and Control (IPC).</p>
                     </div>
-                </div>
-                
-                <div class="tender-section">
-                    <h2 class="section-title"><i class="fas fa-handshake" style="color: #00BFB3;"></i> What This Is (and Is Not)</h2>
-                    <div class="section-content">
-                        <p><strong>This is:</strong></p>
-                        <ul class="check-list">
-                            <li>A partnership / co-founder opportunity</li>
-                            <li>Shared vision, shared ownership, shared growth</li>
-                            <li>Early-stage: idea → prototype → pilot → scale</li>
-                        </ul>
-                        
-                        <p><strong>This is NOT:</strong></p>
-                        <ul class="cross-list">
-                            <li>A traditional salaried job (at least initially)</li>
-                            <li>A short-term consulting role</li>
+                    <div class="section-mini lab-h3">
+                        <h3><i class="fas fa-tasks"></i> Key Responsibilities</h3>
+                        <ul class="highlight-list">
+                            <li><i class="fas fa-vial"></i> Perform specialized laboratory tests</li>
+                            <li><i class="fas fa-chart-line"></i> Implement quality management system, safety procedures & IPC</li>
+                            <li><i class="fas fa-file-alt"></i> Prepare monthly, quarterly, semi-annual, annual reports</li>
+                            <li><i class="fas fa-database"></i> Maintain lab test statistics & records</li>
+                            <li><i class="fas fa-flask"></i> Plan & participate in laboratory research</li>
+                            <li><i class="fas fa-broom"></i> Supervise maintenance & cleanliness of lab facilities</li>
+                            <li><i class="fas fa-plus-circle"></i> Other duties as assigned by supervisor</li>
                         </ul>
                     </div>
-                </div>
-                
-                <div class="tender-section">
-                    <h2 class="section-title"><i class="fas fa-brain" style="color: #00BFB3;"></i> What I Bring</h2>
-                    <div class="section-content">
+                    <div class="section-mini lab-h3">
+                        <h3><i class="fas fa-graduation-cap"></i> Qualifications & Skills</h3>
                         <ul class="highlight-list">
-                            <li><i class="fas fa-user-md" style="color: #00BFB3;"></i> Clinical (MD) and public health (MPH) expertise</li>
-                            <li><i class="fas fa-hands-helping" style="color: #00BFB3;"></i> Hands-on experience in public health informatics</li>
-                            <li><i class="fas fa-map-marked-alt" style="color: #00BFB3;"></i> Deep understanding of African health systems</li>
-                            <li><i class="fas fa-network-wired" style="color: #00BFB3;"></i> Access to real-world problems, stakeholders, and networks</li>
-                            <li><i class="fas fa-seedling" style="color: #00BFB3;"></i> Commitment to building something meaningful and sustainable</li>
+                            <li><i class="fas fa-check-circle" style="color:#00BFB3;"></i> <strong>Education:</strong> Diploma in Medical/Health Laboratory Sciences (Govt-recognized)</li>
+                            <li><i class="fas fa-id-card"></i> Registered with Health Laboratory Practitioners' Council + active license</li>
+                            <li><i class="fas fa-language"></i> Excellent Swahili & English (written/oral)</li>
+                            <li><i class="fas fa-laptop"></i> Computer applications: MS Word, Excel, PowerPoint, internet</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Based in Dar es Salaam (desired)</li>
                         </ul>
                     </div>
-                </div>
-                
-                <!-- How to Apply Section -->
-                <div class="tender-section apply-section">
-                    <h3 class="section-title"><i class="material-icons tender-icon" style="color: #B00020;">send</i> How to Express Interest:</h3>
-                    <div class="section-content">
-                        <p>Send your CV and a brief introduction about yourself, your technical background, and your interest in healthcare innovation to:</p>
+                    <div class="section-mini lab-h3">
+                        <h3><i class="fas fa-file-signature"></i> How to Apply</h3>
+                        <p>Send your CV to:</p>
                         <div class="email-container">
-                            <a href="mailto:updatingsocietytanzania@gmail.com" class="email-link">
-                                <i class="material-icons">email</i>
-                                updatingsocietytanzania@gmail.com
+                            <a href="mailto:updatingsocietytanzania@gmail.com?subject=Application%20for%20Lab%20Technologist%20Role" class="email-link">
+                                <i class="material-icons" style="font-size:18px;">email</i> updatingsocietytanzania@gmail.com
                             </a>
                         </div>
-                        <p class="deadline">Deadline is 28th February 2026</p>
+                        <p style="margin-top:0.8rem; font-size:0.85rem;"><i class="fas fa-info-circle"></i> Reports to: Facility in charge | Part-time (Sunday only)</p>
                     </div>
                 </div>
-            </main>
+            </div>
             
-            <!-- Sidebar -->
-            <aside class="tender-sidebar">
-                <h3 class="sidebar-title"><i class="fas fa-map-marker-alt" style="color: #00BFB3;"></i> Location</h3>
-                <div class="contact-box">
-                    <p><strong>Tanzania-based strongly preferred</strong>, but open to diaspora or remote partners with strong interest in African health innovation.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-globe" style="color: #00BFB3;"></i>
-                            <span>Focus: Tanzania & Africa</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-users" style="color: #00BFB3;"></i>
-                            <span>Partnership model: Co-founder</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="far fa-clock" style="color: #00BFB3;"></i>
-                            <span>Stage: Early-stage venture</span>
-                        </div>
+            <!-- 2. Co-Founder / Technical Partner – HealthTech Innovation (Closed) -->
+            <div class="opportunity-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-rocket" style="color:#00BFB3;"></i> Call for Co-Founder / Technical Partner</h2>
+                    <div class="badge badge-closed"><i class="fas fa-handshake"></i> Equity partnership | Closed</div>
+                    <div class="deadline-badge" style="background:#f0f0f0; color:#999;"><i class="far fa-hourglass-half"></i> Deadline: Closed</div>
+                </div>
+                <div class="card-body">
+                    <div class="section-mini">
+                        <h3><i class="fas fa-globe-africa"></i> The Vision</h3>
+                        <p>Medical doctor & public health informatician (Africa CDC) seeks tech co-founder to build context-aware health tech solving real challenges in Tanzania & Africa.</p>
+                        <ul class="highlight-list">
+                            <li><i class="fas fa-brain"></i> Artificial Intelligence (AI)</li>
+                            <li><i class="fas fa-chart-line"></i> Data Science & ML</li>
+                            <li><i class="fas fa-robot"></i> Robotics / automation (healthcare/lab systems a plus)</li>
+                            <li><i class="fas fa-laptop-medical"></i> Digital health systems & analytics</li>
+                        </ul>
+                    </div>
+                    <div class="section-mini">
+                        <h3><i class="fas fa-search"></i> Who We Were Looking For</h3>
+                        <p>Background in Data Science/ML/AI, software engineering, robotics/automation, or health informatics.</p>
+                        <ul class="highlight-list">
+                            <li><i class="fas fa-lightbulb"></i> Curious and driven</li>
+                            <li><i class="fas fa-tools"></i> Comfortable building from scratch</li>
+                            <li><i class="fas fa-heart" style="color:#B00020;"></i> Motivated by impact, not just titles</li>
+                        </ul>
+                        <p><strong><em>This opportunity is now closed. Thank you to all who applied.</em></strong></p>
+                    </div>
+                    <div class="section-mini">
+                        <h3><i class="fas fa-handshake"></i> What This Was</h3>
+                        <p><strong>✅ Partnership / co-founder opportunity</strong> | Shared ownership | Early-stage idea→pilot→scale.</p>
+                        <p><strong>❌ Not a traditional salaried job</strong> or short-term consulting.</p>
                     </div>
                 </div>
-                
-                <h3 class="sidebar-title"><i class="fas fa-clipboard-check" style="color: #00BFB3;"></i> Requirements</h3>
-                <ul class="requirements-list">
-                    <li><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Technical background in relevant field</li>
-                    <li><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Passion for healthcare innovation</li>
-                    <li><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Long-term commitment mindset</li>
-                    <li><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Willingness to learn and adapt</li>
-                    <li><i class="fas fa-check-circle" style="color: #00BFB3;"></i> Impact-driven motivation</li>
-                </ul>
-                
-                <h3 class="sidebar-title"><i class="fas fa-user-graduate" style="color: #00BFB3;"></i> Ideal Candidate</h3>
-                <ul class="requirements-list">
-                    <li><i class="fas fa-user" style="color: #00BFB3;"></i> Early-career scientists</li>
-                    <li><i class="fas fa-user-graduate" style="color: #00BFB3;"></i> Graduate students</li>
-                    <li><i class="fas fa-laptop-code" style="color: #00BFB3;"></i> Self-taught innovators</li>
-                    <li><i class="fas fa-heart" style="color: #B00020;"></i> Passionate about African health</li>
-                </ul>
-            </aside>
+            </div>
         </div>
         
         <!-- Action Buttons -->
@@ -161,33 +413,34 @@
             <a href="index.html" class="btn btn-secondary">
                 <i class="material-icons">arrow_back</i> Back to Home
             </a>
-            <a href="mailto:updatingsocietytanzania@gmail.com" class="btn btn-primary">
-                <i class="material-icons">send</i> Apply Now
+            <a href="mailto:updatingsocietytanzania@gmail.com?subject=Application%20for%20Lab%20Technologist%20Role" class="btn btn-primary">
+                <i class="material-icons">send</i> Apply for Lab Role
             </a>
         </div>
     </div>
+    <!-- END container -->
     
-    <!-- Footer - Matching Home Page -->
+    <!-- Improved Footer -->
     <footer class="tender-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-heartbeat"></i>
-                    <span>UST Medical Center - HealthTech Initiative</span>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                    <a href="About.html"><i class="fas fa-info-circle"></i> About</a>
-                    <a href="mailto:updatingsocietytanzania@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
-                </div>
-                <div class="copyright">
-                    <p>© 2026 UST Medical Center</p>
-                </div>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>UST Medical Center</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="About.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="services.html"><i class="fas fa-stethoscope"></i> Services</a>
+                <a href="mailto:updatingsocietytanzania@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 UST Medical Center | HealthTech & Laboratory Excellence | Equal Opportunity Employer</p>
             </div>
         </div>
     </footer>
     
-    <!-- WhatsApp Button - Matching Home Page -->
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/255785071020" class="whatsapp-button" target="_blank">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp">
         <span class="whatsapp-text">Chat with us!</span>
